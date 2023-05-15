@@ -1,8 +1,10 @@
+
 function Footer() {
   return (
     <>
       <footer>
-        <p>Built with Love</p>
+    
+        <p>Nike-Hub</p>
       </footer>
     </>
   );
