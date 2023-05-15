@@ -1,0 +1,252 @@
+@use "../global/" as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  //   backdrop-filter: blur(10px);
+  z-index: 300;
+}
+
+.cart-div {
+  width: 60rem;
+  background-color: rgba(255, 255, 255);
+  //   backdrop-filter: blur(10px);
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 400;
+  transition: all 0.5s ease-in-out;
+}
+
+.cart-top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  color: $black;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.059);
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    span {
+      color: $white;
+      background-color: $black;
+      border-radius: 0.6rem;
+      padding: 3px;
+      margin-left: 1rem;
+    }
+  }
+
+  &__right {
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+}
+
+.empty-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 5rem;
+
+  img {
+    width: 15rem;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  button {
+    width: 16rem;
+    background-color: #f97316;
+    color: $black;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px #f97316;
+    margin-top: 1rem;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $white;
+      background-color: $black;
+      box-shadow: 0 4px 6px -1px $black;
+    }
+  }
+}
+
+.cart-open {
+  top: 0;
+  right: 0;
+}
+.cart-closed {
+  top: 0;
+  right: -100%;
+}
+
+.open-overlay {
+  display: flex;
+}
+.close-overlay {
+  display: none;
+}
+
+// cart items
+
+.cart-item-div {
+  width: 100%;
+  height: 14rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  &__img-side {
+    display: flex;
+    gap: 3rem;
+
+    img {
+      width: 19rem;
+      height: auto;
+      background-image: linear-gradient(to bottom, #1c64f2, #5a67d8);
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    &__title-btns {
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      span {
+        display: flex;
+        gap: 1.5rem;
+
+        button {
+          font-size: 1.7rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          background-color: $black;
+          color: $white;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__price-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    gap: 5rem;
+
+    p {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.cart-scroll {
+  overflow-y: scroll;
+  height: 75vh;
+  padding-bottom: 8rem;
+}
+
+.cart-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.checkout-div {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  justify-content: center;
+
+  &__subtotal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: $white;
+      background-color: $black;
+      border-radius: 0.6rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+
+    button {
+      width: 100%;
+      color: $white;
+      background-color: $black;
+      border: none;
+      font-weight: 600;
+      font-size: 1.7rem;
+      padding: 0.4rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+      border: 2px solid $black;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $black;
+        background-color: $white;
+      }
+    }
+  }
+}

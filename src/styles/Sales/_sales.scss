@@ -1,0 +1,140 @@
+@use "../global/" as *;
+
+.sales-section {
+  padding: 0 6rem;
+
+  @media (max-width: 550px) {
+    padding: 0 0;
+  }
+}
+
+.sales-c {
+  display: flex;
+  flex-direction: column;
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2.5rem 0 8rem 0;
+    gap: 3rem;
+
+    @media (max-width: 1280px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 980px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.sales-title {
+  h2 {
+    font-size: 4.5rem;
+    color: $black;
+  }
+}
+
+.item-img {
+  img {
+    width: 25rem;
+  }
+}
+
+.item-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  justify-content: center;
+  border-radius: 2rem;
+  padding: 1rem;
+  gap: 2rem;
+  background-image: linear-gradient(to bottom, #1c64f2, #5a67d8);
+  transition: all 0.3s;
+  box-shadow: 0px 10px 15px -3px rgba(59, 130, 246, 0.6),
+    0px 4px 6px -2px rgba(59, 130, 246, 0.3);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__title {
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__price-star {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.6rem;
+
+    p {
+      font-weight: 600;
+    }
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__bag-buy {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    color: $black;
+
+    button {
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $white;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__item-img {
+    img {
+      transition: all 0.5s;
+      width: 24rem;
+      &:hover {
+        transform: rotate(-15deg);
+      }
+    }
+  }
+}
+
+.item-div-popular {
+  background-origin: red !important;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr !important;
+
+  @media (max-width: 980px) {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr !important;
+  }
+}

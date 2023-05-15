@@ -1,0 +1,18 @@
+@use "../global/" as *;
+
+footer {
+  width: 100%;
+  height: 15rem;
+  background-image: linear-gradient(to bottom, #1c64f2, #5a67d8);
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $white;
+
+  p {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+}
